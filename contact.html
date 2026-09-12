@@ -49,27 +49,38 @@
         </svg>
     </header>
     <section class="contact bg-light pb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form action="https://formspree.io/f/mrgvnzvq" method="POST">
-                        <div class="mb-3">
-                            <input type="text" class="form-control form-control-lg" name="name" placeholder="Name..." required/>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control form-control-lg" name="email" placeholder="Email..." required/>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control form-control-lg" name="message" rows="6" placeholder="Your Message (Optional)"></textarea>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary text-white mt-3">Submit</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-success d-none mb-3" data-fs-success>Thank you! Your message has been sent successfully.</div>
+                <div class="alert alert-danger d-none mb-3" data-fs-error></div>
+                <form id="contact-form" action="https://formspree.io/f/xbgjbvew" method="POST">
+                    
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" name="name" placeholder="Name..." data-fs-field required/>
+                        <div class="text-danger small mt-1" data-fs-error="name"></div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" name="email" placeholder="Email..." data-fs-field required/>
+                        <div class="text-danger small mt-1" data-fs-error="email"></div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control form-control-lg" name="message" rows="6" placeholder="Your Message (Optional)" data-fs-field></textarea>
+                        <div class="text-danger small mt-1" data-fs-error="message"></div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary text-white mt-3" data-fs-submit-btn>Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
     </section>
+<script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xbgjbvew' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <section class="location my-5">
         <div class="container">
             <div class="row">
