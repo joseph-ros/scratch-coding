@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-success d-none mb-3" data-fs-success>Thank you! Your message has been sent successfully.</div>
-                <div class="alert alert-danger d-none mb-3" data-fs-error></div>
+                <div class="alert alert-danger d-none mb-3" data-fs-error>Oops! There was a problem submitting your form. Please try again.</div>
                 <form id="contact-form" action="https://formspree.io/f/xbgjbvew" method="POST">
                     
                     <div class="mb-3">
@@ -76,11 +76,6 @@
         </div>
     </div>
     </section>
-<script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#contact-form', formId: 'xbgjbvew' });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <section class="location my-5">
         <div class="container">
             <div class="row">
@@ -132,8 +127,12 @@
             </div>
         </div>
     </footer>
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contact-form', formId: 'xbgjbvew' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-
 </html>
